@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<!-- bean definitions here -->
+	<bean id="basketballActivity" class="org.schoolactivities.model.BasketballActivity">
+		<property name="studentA">
+			<bean class="org.schoolactivities.model.Student">
+				<property name="name" value="A" />
+				<property name="surname" value="StudentA" />
+			</bean>
+		</property>
+		<property name="studentB">
+			<bean class="org.schoolactivities.model.Student">
+				<property name="name" value="B" />
+				<property name="surname" value="StudentB" />
+			</bean>
+		</property>
+
+		<property name="studentC" ref="student_C" />
+	</bean>
+
+	<bean id="footballActivity" class="org.schoolactivities.model.FootballActivity" autowire="byName">
+		<property name="studentC" ref="student_C" />
+		<property name="studentD" ref="student_D" />
+		<property name="studentE" ref="student_E" />
+	</bean>
+	
+	<bean id="schoolService" class="org.schoolactivities.service.SchoolService" autowire="byName">
+	
+	</bean>
+
+
+	<bean id="student_C" class="org.schoolactivities.model.Student">
+		<property name="name" value="C" />
+		<property name="surname" value="StudentC" />
+	</bean>
+
+	<bean id="student_D" class="org.schoolactivities.model.Student">
+		<property name="name" value="D" />
+		<property name="surname" value="StudentD" />
+	</bean>
+
+	<bean id="student_E" class="org.schoolactivities.model.Student">
+		<property name="name" value="E" />
+		<property name="surname" value="StudentE" />
+	</bean>
+
+</beans>

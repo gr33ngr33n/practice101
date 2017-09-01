@@ -1,0 +1,5 @@
+org\schoolactivities\model\BasketballActivity.class
+org\schoolactivities\model\Student.class
+org\schoolactivities\model\FootballActivity.class
+org\schoolactivities\controller\MainSchool.class
+org\schoolactivities\service\SchoolService.class
